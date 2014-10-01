@@ -20,6 +20,20 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet var city: UITextField!
+    
+    @IBAction func btn_addCity_Click(sender: UIButton) {
+        weatherMng.addCity(city.text)
+        self.view.endEditing(true)
+        city.text = ""
+        self.tabBarController?.selectedIndex = 0
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool { // called when 'return' key pressed. return NO to ignore.
+        textField.resignFirstResponder();
+        return true;
+    }
 
+    
 }
 
