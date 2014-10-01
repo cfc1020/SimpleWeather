@@ -14,6 +14,10 @@
 		3857BF4319D1A7050085F0C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3857BF4219D1A7050085F0C2 /* Images.xcassets */; };
 		3857BF4619D1A7050085F0C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3857BF4419D1A7050085F0C2 /* LaunchScreen.xib */; };
 		3857BF5219D1A7050085F0C2 /* SimpleWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3857BF5119D1A7050085F0C2 /* SimpleWeatherTests.swift */; };
+		3857BF5C19D1A72E0085F0C2 /* WeatherMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3857BF5B19D1A72E0085F0C2 /* WeatherMng.swift */; };
+		3857BF5F19D1AB1A0085F0C2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3857BF5D19D1AB1A0085F0C2 /* Model.xcdatamodeld */; };
+		3857BF6119D1AB960085F0C2 /* Weathers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3857BF6019D1AB960085F0C2 /* Weathers.swift */; };
+		A55214157623482D84DE1828 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1877F6E34047A9909C6454 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,12 @@
 		3857BF4B19D1A7050085F0C2 /* SimpleWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3857BF5019D1A7050085F0C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3857BF5119D1A7050085F0C2 /* SimpleWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWeatherTests.swift; sourceTree = "<group>"; };
+		3857BF5B19D1A72E0085F0C2 /* WeatherMng.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherMng.swift; sourceTree = "<group>"; };
+		3857BF5E19D1AB1A0085F0C2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		3857BF6019D1AB960085F0C2 /* Weathers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weathers.swift; sourceTree = "<group>"; };
+		3857BF6219D1CE930085F0C2 /* SwiftWeather-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftWeather-Bridging-Header.h"; sourceTree = "<group>"; };
+		E0B8BDC31C1C445895D280B3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		FE1877F6E34047A9909C6454 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A55214157623482D84DE1828 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +75,8 @@
 				3857BF3619D1A7050085F0C2 /* SimpleWeather */,
 				3857BF4E19D1A7050085F0C2 /* SimpleWeatherTests */,
 				3857BF3519D1A7050085F0C2 /* Products */,
+				E0B8BDC31C1C445895D280B3 /* Pods.xcconfig */,
+				8B1A47FA398446CB915E848E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +99,10 @@
 				3857BF4219D1A7050085F0C2 /* Images.xcassets */,
 				3857BF4419D1A7050085F0C2 /* LaunchScreen.xib */,
 				3857BF3719D1A7050085F0C2 /* Supporting Files */,
+				3857BF5B19D1A72E0085F0C2 /* WeatherMng.swift */,
+				3857BF5D19D1AB1A0085F0C2 /* Model.xcdatamodeld */,
+				3857BF6019D1AB960085F0C2 /* Weathers.swift */,
+				3857BF6219D1CE930085F0C2 /* SwiftWeather-Bridging-Header.h */,
 			);
 			path = SimpleWeather;
 			sourceTree = "<group>";
@@ -115,6 +132,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8B1A47FA398446CB915E848E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE1877F6E34047A9909C6454 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3857BF5519D1A7050085F0C2 /* Build configuration list for PBXNativeTarget "SimpleWeather" */;
 			buildPhases = (
+				42CFF32FE0244B45853BA98F /* Check Pods Manifest.lock */,
 				3857BF3019D1A7050085F0C2 /* Sources */,
 				3857BF3119D1A7050085F0C2 /* Frameworks */,
 				3857BF3219D1A7050085F0C2 /* Resources */,
+				743A85196CD140D1AE329640 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,12 +237,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		42CFF32FE0244B45853BA98F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		743A85196CD140D1AE329640 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3857BF3019D1A7050085F0C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3857BF3E19D1A7050085F0C2 /* SecondViewController.swift in Sources */,
+				3857BF5C19D1A72E0085F0C2 /* WeatherMng.swift in Sources */,
+				3857BF6119D1AB960085F0C2 /* Weathers.swift in Sources */,
+				3857BF5F19D1AB1A0085F0C2 /* Model.xcdatamodeld in Sources */,
 				3857BF3A19D1A7050085F0C2 /* AppDelegate.swift in Sources */,
 				3857BF3C19D1A7050085F0C2 /* FirstViewController.swift in Sources */,
 			);
@@ -338,16 +401,19 @@
 		};
 		3857BF5619D1A7050085F0C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0B8BDC31C1C445895D280B3 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "/Users/cfc1020/mydevforios/SimpleWeather/SimpleWeather/SwiftWeather-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		3857BF5719D1A7050085F0C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0B8BDC31C1C445895D280B3 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleWeather/Info.plist;
@@ -409,6 +475,7 @@
 				3857BF5719D1A7050085F0C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3857BF5819D1A7050085F0C2 /* Build configuration list for PBXNativeTarget "SimpleWeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -417,8 +484,22 @@
 				3857BF5A19D1A7050085F0C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3857BF5D19D1AB1A0085F0C2 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3857BF5E19D1AB1A0085F0C2 /* Model.xcdatamodel */,
+			);
+			currentVersion = 3857BF5E19D1AB1A0085F0C2 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3857BF2C19D1A7050085F0C2 /* Project object */;
 }
