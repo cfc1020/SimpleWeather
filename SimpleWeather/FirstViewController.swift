@@ -12,26 +12,18 @@ import CoreData
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tblWeathers: UITableView!
+    
+    var refreshControl: UIRefreshControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        //let appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        //let context: NSManagedObjectContext = appDel.managedObjectContext!
-        //let request = NSFetchRequest(entityName: "Tasks")
-        
-       // var results: NSArray = context.executeFetchRequest(request, error: nil)!
-        
-        //for task in results {
-        //    let t = task as Tasks
-        //    taskMgr.addTaskNotStored(t.name, desc: t.desc)
-        //}
-        
-        //tblTasks.reloadData()
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Updating...")
+        refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        tblWeathers.addSubview(refreshControl)
         
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "updateTable", object: nil)
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkRes:", name: "updateTable", object: nil);
         
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
@@ -44,6 +36,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let w = weather as Weathers
             weatherMng.addTCityNotStored(w.city, temp: w.temp, condition: w.condition)
         }
+    }
+    
+    func refresh(sender: AnyObject) {
+        for weather in weatherMng.weathers {
+            weather.updateWeatherInfo() // async
+        }
+        refreshControl.endRefreshing()
     }
     
     func checkRes(notif: NSNotification) {
@@ -68,8 +67,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
         
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            //NSUserDefaults.standardUserDefaults().removeObjectForKey(taskMgr.tasks[indexPath.row].name)
-            
             let appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
             let context: NSManagedObjectContext = appDel.managedObjectContext!
             let request = NSFetchRequest(entityName: "Weathers")

@@ -15,8 +15,6 @@ class weather: NSObject {
     var temp: String  = "0.0"
     var condition: String = "Un"
     
-    //@IBOutlet var tblWeathers: UITableView!
-    
     init(city_: String) {
         city = city_
     }
@@ -93,8 +91,7 @@ class weather: NSObject {
         
         var results: NSArray = context.executeFetchRequest(request, error: nil)!
         
-        if (results.count > 0) {
-            //println("QAZ-------QAZ")
+        if (results.count > 0) { // Update or Create
             for weather in results {
                 let w = weather as Weathers
                 w.condition = condition
@@ -123,30 +120,10 @@ class WeatherManager: NSObject {
         weathers.append(weather(city_: city, temp_: temp, condition_: condition))
     }
     
-    
-    
     func addCity(city: String) {
         var w = weather(city_: city)
         
         w.updateWeatherInfo()
-        
         weathers.append(w)
-        
-        //let appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        //let context: NSManagedObjectContext = appDel.managedObjectContext!
-        //let ent = NSEntityDescription.entityForName("Weathers", inManagedObjectContext: context)
-        
-        //var newWeather = Weathers(entity: ent!, insertIntoManagedObjectContext: context)
-        
-        //newWeather.city = w.city
-        //newWeather.temp = w.temp
-        //newWeather.condition = w.condition
-        
-        //context.save(nil)
-        //println(newTask)
-    }
-    
-    func dumpWeathers() {
-        
     }
 }
